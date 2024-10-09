@@ -2,8 +2,8 @@ import { useState } from "react";
 import { nanoid } from "nanoid"; // Use nanoid for generating unique ids
 import ColorInput from "./Color/ColorInput";
 const ColorForm = ({ addColor }) => {
-  const [role, setRole] = useState("new role");
-  const [hex, setHex] = useState("#000000");
+  const [role, setRole] = useState("");
+  const [hex, setHex] = useState("#FFFFFF");
   const [contrastText, setContrastText] = useState("#FFFFFF");
 
   const handleSubmit = (e) => {
@@ -15,31 +15,36 @@ const ColorForm = ({ addColor }) => {
       contrastText,
     };
     addColor(newColor);
+    setRole("");
+    setHex("#FFFFFF");
+    setContrastText("#FFFFFF");
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Role:
-        <input
-          type="text"
-          value={role}
-          onChange={(e) => setRole(e.target.value)}
-        />
-      </label>
+    <fieldset>
+      <form onSubmit={handleSubmit}>
+        <label>
+          <legend> Role:</legend>
+          <input
+            type="text"
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+          />
+        </label>
 
-      <label>
-        Hex Value:
-        <ColorInput value={hex} onChange={setHex} />
-      </label>
+        <label>
+          <legend> Hex Value:</legend>
+          <ColorInput value={hex} onChange={setHex} />
+        </label>
 
-      <label>
-        Contrast Text:
-        <ColorInput value={contrastText} onChange={setContrastText} />
-      </label>
+        <label>
+          <legend> Contrast Text:</legend>
+          <ColorInput value={contrastText} onChange={setContrastText} />
+        </label>
 
-      <button type="submit">Add Color</button>
-    </form>
+        <button type="submit">Add Color</button>
+      </form>
+    </fieldset>
   );
 };
 

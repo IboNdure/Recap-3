@@ -45,6 +45,8 @@ form {
   /* flex-direction: column; */
   gap: 1rem;
   margin-bottom: 2rem;
+  justify-content: center;
+  /* text-align: justify; */
 }
 
 button {
@@ -57,4 +59,9 @@ button {
 
 button:hover {
   background-color: #45a049;
+}
+fieldset {
+  display: flex;
+  justify-content: center;
+  align-self: center;
 }
