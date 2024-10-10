@@ -6,22 +6,26 @@ export default function Color({ color, deleteColor, updateColor }) {
   const [showConfirm, setShowConfirm] = useState(false);
   const [editMode, setEditMode] = useState(false);
 
+  // Handle enabling the edit mode
   const handleEdit = () => {
-    setEditMode(true); // Enable edit mode
+    setEditMode(true);
   };
 
+  // Handle update and exit edit mode after saving
   const handleUpdate = (updatedColor) => {
-    updateColor(updatedColor); // Corrected function name and argument
-    setEditMode(false); // Exit edit mode after updating
+    updateColor(updatedColor); // Call parent to update the color
+    setEditMode(false); // Exit edit mode after update
   };
 
+  // Handle delete confirmation
   const handleDelete = () => {
-    setShowConfirm(true); // Show confirmation on delete click
+    setShowConfirm(true); // Show confirmation dialog
   };
 
+  // Confirm deletion and close confirmation dialog
   const confirmDelete = () => {
-    deleteColor(color.id); // Call the parent function to delete the color
-    setShowConfirm(false); // Close the confirmation after deletion
+    deleteColor(color.id);
+    setShowConfirm(false);
   };
 
   return (
@@ -34,9 +38,9 @@ export default function Color({ color, deleteColor, updateColor }) {
     >
       {editMode ? (
         <ColorForm
-          addColor={handleUpdate} // Reuse form for updating
-          initialValues={color} // Pass current values as initial values
-          isEditing={true} // Indicate that this is an edit operation
+          addColor={handleUpdate} // Use the form to update color
+          initialValues={color} // Pass current color data
+          isEditing={true} // Indicate that it's an edit operation
         />
       ) : (
         <>
