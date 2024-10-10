@@ -1,3 +1,7 @@
+body {
+  background-color: goldenrod;
+}
+
 .color-card {
   padding: 30px;
   margin: 10px;
@@ -51,7 +55,7 @@ form {
 
 button {
   padding: 0.5rem 1rem;
-  background-color: #4caf50;
+  background-color: #0f0390;
   color: white;
   border: none;
   cursor: pointer;
