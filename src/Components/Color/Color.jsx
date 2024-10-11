@@ -27,7 +27,7 @@ export default function Color({ color, deleteColor, updateColor }) {
       );
 
       const data = await response.json();
-      console.log(data);
+
       if (data) {
         setA11yScore(data.overall); // Set the a11y score if successful
       } else {

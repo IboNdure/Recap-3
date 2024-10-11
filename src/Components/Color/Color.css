@@ -1,10 +1,13 @@
 body {
-  background-color: goldenrod;
+  background-image: url("/1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .color-card {
   padding: 30px;
-  margin: 10px;
+  margin: 1px;
   border-radius: 20px;
   text-align: center;
   width: 900px;
@@ -13,7 +16,7 @@ body {
 }
 
 .color-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 
 .color-card-headline {
